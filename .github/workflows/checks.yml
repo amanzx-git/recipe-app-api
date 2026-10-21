@@ -18,7 +18,7 @@ jobs:
 
       - name: Test
         # Changed "docker-compose" to "docker compose"
-        run: docker compose run --rm app sh -c "python manage.py test"
+        run: docker compose run --rm app sh -c "python manage.py wait_for_db && python manage.py test"
 
       - name: Lint
         # Changed "docker-compose" to "docker compose"
